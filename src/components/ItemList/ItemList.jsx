@@ -1,24 +1,9 @@
-import { useEffect, useState } from "react";
-import { getFetch } from "../../../helpers/getFetch";
+import Item from "../Item/item"
 
-const ItemList = () => {
-    const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
+const ItemList = ({ productos }) => {
+        return (
+            productos.map(producto => <Item key={producto.id} productos={productos} />)
+        )
+    }
 
-    useEffect(() => {
-        getFetch() // llamada a la api
-    .then((resp) => {
-            setProductos(resp)
-        })
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-    }, [])
-    console.log(productos)
-} 
-
-return (
-    <div>
-        {productos.map (productos => <li key={producto.id} > </li></li>)}
-    </div>
-)
 export default ItemList
