@@ -1,4 +1,4 @@
-const ItemDetail = (productos) => {
+const ItemDetail = ({productos}) => {
     return (
         <div className="row">
             <div className="col.md-6">
