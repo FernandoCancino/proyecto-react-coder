@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getFetch } from "../../helpers/getFetch";
 import ItemList from "../ItemList/ItemList";
 
@@ -7,13 +8,27 @@ const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
+    
+    const {categoriaId} = useParams ()
+    console.log (categoriaId)
+
     useEffect(() => {
-        getFetch() // llamada a la api
+        if (categoriaId) {
+            getFetch() // llamada a la api
             .then((resp) => {
-                setProductos(resp)
+                setProductos(resp.filter (productos => productos.categoriaId = categoriaId))
             })
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
+        }        
+        else{
+            getFetch() // llamada a la api
+        .then((resp) => {
+            setProductos(resp)
+        })
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))}
+        
     }, [])
     console.log(productos)
 

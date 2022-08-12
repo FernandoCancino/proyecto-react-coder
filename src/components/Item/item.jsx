@@ -1,9 +1,16 @@
-const Item = (producto) => {
+import { Link } from "react-router-dom"
+
+const Item = (productos) => {
     return (<div>
-        <h1>nombre: ${producto.nombre}</h1>
-        <h2>stock: ${producto.stock}</h2>
-        <h3>descripción: ${producto.descripcion}</h3>
+        <h1>nombre: ${productos.nombre}</h1>
+        <h2>stock: ${productos.stock}</h2>
+        <h3>descripción: ${productos.descripcion}</h3>
+        <Link to={`/detalle/${productos.id}`}>
+            <button className="btn btn-outline-secondary btn-block">
+                Detalle
+            </button>
+        </Link>
     </div>
     )
-} 
- export default Item 
+}
+export default Item 
