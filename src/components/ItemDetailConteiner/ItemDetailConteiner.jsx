@@ -15,6 +15,7 @@ const ItemDetailConteiner = () => {
     }, [])
 
 
+    
     return <ItemDetail productos = {productos} />
 }
 

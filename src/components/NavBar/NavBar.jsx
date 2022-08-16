@@ -10,8 +10,8 @@ const NavBar = () => {
                     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                     <Nav className="me-auto">
                         <NavLink to="/" className={({ isActive }) => isActive ? "text-secondary" : ""}>Inicio</NavLink>
-                        <NavLink to= "/categoria/cremas">Cremas</NavLink>
-                        <NavLink to="/catergoria/belleza">Belleza</NavLink>
+                        <NavLink to= "/categoria/crema">Cremas</NavLink>
+                        <NavLink to="/categoria/belleza">Belleza</NavLink>
                         <Link to="/CartWidget">
                             <CartWidget />
                         </Link>

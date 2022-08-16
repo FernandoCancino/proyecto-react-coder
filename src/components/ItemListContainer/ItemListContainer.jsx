@@ -16,7 +16,7 @@ const ItemListContainer = () => {
         if (categoriaId) {
             getFetch() // llamada a la api
             .then((resp) => {
-                setProductos(resp.filter (productos => productos.categoriaId = categoriaId))
+                setProductos(resp.filter (productos => productos.categoria == categoriaId))
             })
             .catch(err => console.log(err))
             .finally(() => setLoading(false))

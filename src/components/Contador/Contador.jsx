@@ -1,22 +1,29 @@
 import { useState } from "react"
 
 
-const Contador = () => {
+const Contador = ({setCantidadProducto}) => {    
     const [count, modificarCount] = useState(1)
-    function sumar() {
+    const sumar = () => {
         modificarCount(count + 1)
     }
-    function restar() {
-        modificarCount(count - 1)
+    const restar = () => {
+        modificarCount(count - 1) 
     }
+    const onAdd = () => {
+        setCantidadProducto (count)
+    }
+
     return (
-        <div>
-            <h2> La cantidad de artículos es = {count} </h2>
-            <button onClick={sumar} >Click </button>
-            <button onClick={restar} >Click </button>
-        </div>
+        <>
+            <div>
+                <button onClick={restar} >Restar </button>
+                <span> {count} </span>
+                <button onClick={sumar} >Agregar </button>
+            </div>
+            <button onClick={onAdd}>AGREGAR AL CARRITO</button>
+        </>
     )
 
 }
 
-export default Contador
+export default Contador 
