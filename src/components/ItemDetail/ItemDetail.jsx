@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState} from "react"
 import { Link } from "react-router-dom"
 import Contador from "../Contador/Contador"
+
 
 const ItemDetail = ({productos}) => {
 
@@ -14,7 +15,7 @@ const ItemDetail = ({productos}) => {
                 <h3>descripción: {productos.descripcion}</h3>
                 <h4>stock: {productos.stock}</h4>
                 
-                { cantidadProducto > 1 ?<Link to="/cart"> <button>Comprar</button> </Link> : < Contador setCantidadProducto = {setCantidadProducto} />  }                        
+                { cantidadProducto > 1 ?<Link to="/cart"> <button>Comprar</button> </Link> : < Contador setCantidadProducto = {setCantidadProducto} productoData = {productos} />  }                        
             </div> 
         </div>
     )

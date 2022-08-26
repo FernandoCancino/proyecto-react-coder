@@ -10,7 +10,6 @@ const ItemListContainer = () => {
 
     
     const {categoriaId} = useParams ()
-    console.log (categoriaId)
 
     useEffect(() => {
         if (categoriaId) {
@@ -30,7 +29,7 @@ const ItemListContainer = () => {
         .finally(() => setLoading(false))}
         
     }, [categoriaId])
-    console.log(productos)
+
 
     
     return (
