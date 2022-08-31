@@ -19,10 +19,10 @@ const CartProvider = ({ children }) => {
                 }
             })
             setCart(newArray)
-            setTotalProducts(totalProducts + productos.cantidad)
+            setTotalProducts(totalProducts + productos.count)
         } else {
             setCart([...cart, productos])
-            setTotalProducts(totalProducts + productos.cantidad)
+            setTotalProducts(totalProducts + productos.count)
         }
     }
 

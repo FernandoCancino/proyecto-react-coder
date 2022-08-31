@@ -5,7 +5,7 @@ import Contador from "../Contador/Contador"
 
 const ItemDetail = ({productos}) => {
 
-   const [cantidadProducto, setCantidadProducto] = useState(1)
+   const [cantidadProducto, setCantidadProducto] = useState(0)
 
 
     return (
@@ -15,7 +15,7 @@ const ItemDetail = ({productos}) => {
                 <h3>descripción: {productos.descripcion}</h3>
                 <h4>stock: {productos.stock}</h4>
                 
-                { cantidadProducto > 1 ?<Link to="/cart"> <button>Comprar</button> </Link> : < Contador setCantidadProducto = {setCantidadProducto} productoData = {productos} />  }                        
+                { cantidadProducto > 0 ?<Link to="/cart"> <button>Comprar</button> </Link> : < Contador setCantidadProducto = {setCantidadProducto} productoData = {productos} />  }                        
             </div> 
         </div>
     )

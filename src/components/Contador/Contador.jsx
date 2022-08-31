@@ -16,7 +16,8 @@ const Contador = ({setCantidadProducto, productoData}) => {
     }
 
     const onAdd = () => {
-        addToCart (productoData)
+        addToCart ({...productoData, count})
+        setCantidadProducto (count)
     }
 
     return (
